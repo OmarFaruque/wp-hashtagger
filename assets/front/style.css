@@ -1,0 +1,69 @@
+.ui-widget.ui-widget-content{
+	border-color: #ccc; 
+}
+.ui-widget.ui-widget-content li.ui-menu-item.ui-state-focus {
+    background: #2196F3;
+    color:#fff;
+}
+.ui-widget.ui-widget-content li.ui-menu-item {
+    padding: 5px 8px;
+}
+form.r_form input[type="email"],
+form.r_form input[type="text"] {
+    background: #fff;
+    max-height: 30px;
+    font-size: 12px;
+}
+button.pull-right.btn.btn-primary.btn-hashtag {
+    background: #f78a15;
+    border-color: #f78a15;
+    font-size: 12px;
+    padding: 5px 15px;
+    width:100%;
+}
+.form-inline {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.rg_list ul li{position: relative;}
+.rg_list ul li span {
+    background-color: #004568;
+    color: #fff;
+    padding: 0px 6px;
+    margin-bottom: 5px;
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 12px;
+    position: relative;
+}
+.rg_list ul li span.delete {
+    position: absolute;
+    width: 16px;
+    height: 12px;
+    color: #f07c7c;
+    right: 3px;
+    top: -3px;
+    overflow: visible;
+    font-family: 'fontAwesome';
+    font-size: 12px;
+    line-height: 8px;
+    cursor: pointer;
+    opacity: 0;
+    background: none;
+}
+.rg_list ul li:hover span.delete{
+    opacity: 1;
+}
+span.hastag_c_0 {
+    color: orange;
+}
+a.hastag_c_1 {
+    color: green;
+}
+.acomment-content {
+    color: transparent;
+}
