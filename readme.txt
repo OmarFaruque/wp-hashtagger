@@ -1,8 +1,7 @@
 === hashtagger ===
 Contributors: petersplugins, smartware.cc
-Donate link:http://petersplugins.com/make-a-donation/
 Tags: hashtag, hashtags, tag, tags, tag archive, archive, social, twitter, facebook
-Requires at least: 3.0
+Requires at least: 1.0
 Tested up to: 4.8
 Stable tag: 3.6
 License: GPLv2 or later
@@ -20,11 +19,11 @@ Simply use #hashtags, @usernames (if activated) and $cashtags (if activated) in 
 
 = #hashtags =
 
-This plugin uses the [WordPress Tag system](http://codex.wordpress.org/Posts_Tags_Screen) to field your post under the desired tags. When saving a post each [#hashtag](http://en.wikipedia.org/wiki/Hashtag) is added as a "normal" tag (without leading hash) to the post, so it is fully compatible with existing tags. When showing a post all #hashtags are automatically converted to links leading to the corresponding tag archive page (link creating can be disabled to use this plugin only for automated tag creation). It is not necessary to generally adapt existing posts, because their tags stay unchanged. But keep in mind that on saving a post all existing tas are **removed** and replaced by the tags found in your post (this behavior is configurable)!
+This plugin uses the [WordPress Tag system](http://codex.wordpress.org/Posts_Tags_Screen) to field your post under the desired tags. When saving a post each [#hashtag](http://en.wikipedia.org/wiki/Hashtag) is added as a "normal" tag (without leading hash) to the post, so it is fully compatible with existing tags. When showing a post all #hashtags are automatically converted to links (if activated) leading to the corresponding tag archive page (link creating can be disabled to use this plugin only for automated tag creation). It is not necessary to generally adapt existing posts, because their tags stay unchanged. But keep in mind that on saving a post / custom post all existing tags are **removed** and replaced by the tags found in your post (this behavior is configurable)!
 
 = @usernames =
 
-The usage of @usernames can be activated optionally. @usernames can link either to the Users Profile Page or to the Users Website. If the username does not exist the text remains unchanged and no link is created. Optionally @nicknames can be used instead of @usernames. This is **recommended to enhance security** ([read more](http://petersplugins.com/wp-hashtagger/hashtagger-plugin-why-you-should-use-nicknames-instead-of-usernames/)). Although using @nicknames is the better option, the default is @usernames for compatibility to Plugin versions prior 2.1.
+The usage of @usernames can be activated optionally. @usernames can link either to the Users Profile Page or to the Users Website. If the username does not exist the text remains unchanged and no link is created. Optionally @nicknames can be used instead of @usernames. This is **recommended to enhance security** ([read more](http://larasoftbd.com/wp-hashtagger/hashtagger-plugin-why-you-should-use-nicknames-instead-of-usernames/)). Although using @nicknames is the better option, the default is @usernames for compatibility to Plugin versions prior 2.1.
 
 = $cashtags =
 
@@ -35,10 +34,8 @@ The usage of $cashtags can be activated optionally. $cashtags link to the concer
 Just type anywhere in a post
 
 **#hashtag** 
-This adds "hashtag" as tag to the current post and on links to tag archive page for "hashtag" when showing the post.
+This adds "hashtag" as tag to the current post and on links to tag archive page for "hashtag" when showing the post. And show number of all post with relatded #hastag like #hastag(number).
 
-**+#hashtag** 
-Use +#hashtag to only link to a tag archive page without adding "hashtag" as tag to the post. When showing the post the link is showed as "#hashtag" (without "+"). If the tag does not exist the text remains unchanged and no link is created.
 
 **##hashtag**
 Use duplicate ##hashes to tell the plugin that this word should not be converted into a tag. Duplicate hashes are replaced by a single hash when showing the post.
@@ -55,21 +52,18 @@ This creates a link to the concerning stock symbol at MarketWatch, Google Financ
 **$$chashtag**
 Use $$cashtag to avoid link creation. When showing the post this is displayed as "$cashtag" without link ($cashtag feature has to be activated).
 
-= Watch the video (outdated version, new version will be created as soon as possible) =
-
-https://www.youtube.com/watch?v=cNNn1VLz4zs
 
 = Need more information? =
 
-See [Plugin Homepage](http://petersplugins.com/free-wordpress-plugins/hashtagger/) and [Plugin Doc](http://petersplugins.com/docs/hashtagger/)
+See [Plugin Homepage](http://larasoftbd.com/free-wordpress-plugins/wp-hashtagger/) and [Plugin Doc](http://larasoftbd.com/docs/wp-hashtagger/)
 
 = WordPress Security =
 
-**It is highly recommended to use @nicknames instead of @usernames!** Please read [this article](http://petersplugins.com/wp-hashtagger/hashtagger-plugin-why-you-should-use-nicknames-instead-of-usernames/)!
+**It is highly recommended to use @nicknames instead of @usernames!** Please read [this article](http://larasoftbd.com/wp-hashtagger/hashtagger-plugin-why-you-should-use-nicknames-instead-of-usernames/)!
 
 = Post Types and Section Types =
 
-It is possible to use #hashtags, @usernames and $cashtags on Posts, on Pages and on Custom Post Types within Content, Title and Excerpt. Activate only the Post Types and Section Types you want to be processed to avoid unnecessary processing for best performance.
+It is possible to use #hashtags, @usernames and $cashtags on Posts, on Pages, on comment, on buddypress and on Custom Post Types within Content, Title and Excerpt. Activate only the Post Types and Section Types you want to be processed to avoid unnecessary processing for best performance.
 
 = Formatting links =
 
@@ -81,14 +75,15 @@ Optionally all symbols (#, @, $) can be removed from the links generated in fron
 
 = Do you like the hashtagger Plugin? =
 
-Thanks, I appreciate that. You don’t need to make a donation. No money, no beer, no coffee. Please, just [tell the world that you like what I’m doing](http://petersplugins.com/make-a-donation/)! And that’s all.
+Thanks, I appreciate that. You don’t need to make a donation. No money, no beer, no coffee. Please, just [tell the world that you like what I’m doing](http://larasoftbd.com/make-a-donation/)! And that’s all.
 
-= More plugins from Peter =
 
-* **[404page](https://wordpress.org/plugins/404page/)** - Define any of your WordPress pages as 404 error page 
-* **[smart Archive Page Remove](https://wordpress.org/plugins/smart-archive-page-remove/)** - Completely remove unwated Archive Pages from your Blog 
-* **[smart User Slug Hider](https://wordpress.org/plugins/smart-user-slug-hider/)** - Hide usernames in author pages URLs to enhance security 
-* [See all](https://profiles.wordpress.org/petersplugins/#content-plugins)
+= Mail Registration for new article for registered tag's =
+For registration mail you have to active tooltip. We use qtip for tooltip. User can registration there mail for each new article againest tag. When site admin write new article with hastag, user can get email notification. 
+
+= Widget =
+For registration email & view existing registered tag use widget from widget section 'wp-hastager'.
+
 
 == For developers ==
 
@@ -107,6 +102,9 @@ The hashtag detection follows the rules for hashtags on Twitter, Facebook and Go
 Yes and No. Yes - the plugin can add the tags also for pages. No - WordPress does not show the tags section for pages and also pages are not listed on tag archives. 
 
 This plugin does not change this behavior of WordPress because there already exist several plugins that add the tag functionality for pages. Please use one of them if you want to tag your pages.
+
+= Does this also work for pages? =
+Yes plugin work for buddypress. 
 
 = How to change the Tag base? =
 

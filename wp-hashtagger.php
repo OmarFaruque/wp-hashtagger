@@ -8,7 +8,7 @@
  * Plugin Name: wp-hashtagger
  * Description: Use #hashtags, @usernames and $cashtags in your posts, #tags links
  * Version: 1.0.1
- * Author: larasoft
+ * Author: ronymaha
  * Text Domain: wp-hashtagger
  */
 
