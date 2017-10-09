@@ -249,20 +249,21 @@ if ( !class_exists( 'WP_Hashtagger' ) ) {
 // ADD JS FILE    
 function add_script(){
         wp_enqueue_script( 'jquery-ui-autocomplete' );
-        wp_enqueue_script( 'wp-hashtagger-qtip', plugins_url() . '/wp-hashtagger/assets/front/jquery.qtip.min.js', array('jquery'), '9302017', false );
-        wp_enqueue_script( 'wp-hashtagger-js', plugins_url() . '/wp-hashtagger/assets/front/script.js', array('jquery'), '9162017', false );
+        wp_enqueue_script( 'wp-hashtagger-qtip', WHURL . '/assets/front/jquery.qtip.min.js', array('jquery'), '9302017', false );
+        wp_enqueue_script( 'wp-hashtagger-js', WHURL . '/assets/front/script.js', array('jquery'), '9162017', false );
         wp_localize_script( 'wp-hashtagger-js', 'hastagger_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
         
 
 
         //CSS
-        wp_enqueue_style( 'jQueryUicss', 'http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', array(), '919201701', 'screen' );
-        wp_enqueue_style( 'css-hastag', plugins_url() . '/wp-hashtagger/assets/front/style.css', array(), '919201702', 'screen' );
-        wp_enqueue_style( 'css-qtip', plugins_url() . '/wp-hashtagger/assets/front/jquery.qtip.min.css', array(), '9201702', 'screen' );
+        wp_register_style( 'jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css', array(), '919201701', 'screen' );
+        wp_enqueue_style( 'jquery-ui' );   
+        wp_enqueue_style( 'css-hastag', WHURL . '/assets/front/style.css', array(), '919201702', 'screen' );
+        wp_enqueue_style( 'css-qtip', WHURL . '/assets/front/jquery.qtip.min.css', array(), '9201702', 'screen' );
 }
 
 function admin_add_script(){
-  wp_enqueue_script( 'wp-ahashtagger-js', plugins_url() . '/wp-hashtagger/assets/admin/whastagger.js', array('jquery'), '9182017', false );
+  wp_enqueue_script( 'wp-ahashtagger-js', WHURL . '/assets/admin/whastagger.js', array('jquery'), '9182017', false );
   wp_localize_script( 'wpahashtagger-js', 'admin_hastagger_ajax', array( 'admin_ajaxurl' => admin_url( 'admin-ajax.php' ) ) );  
 }
 

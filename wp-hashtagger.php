@@ -16,14 +16,16 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+define('WHDIR', plugin_dir_path( __FILE__ ));
+define('WHURL', plugin_dir_url( __FILE__ ));
 
 
 /**
  * Load core plugin class and run the plugin
  */
-require_once( plugin_dir_path( __FILE__ ) . '/inc/class-wp-hashtagger.php' );
-require_once( plugin_dir_path( __FILE__ ) . '/inc/hash-wedget.php' );
-require_once( plugin_dir_path( __FILE__ ) . '/inc/front/ajax.php' );
+require_once( WHDIR . '/inc/class-wp-hashtagger.php' );
+require_once( WHDIR . '/inc/hash-wedget.php' );
+require_once( WHDIR . '/inc/front/ajax.php' );
 $wp_hashtagger = new WP_Hashtagger( __FILE__ );
 
 

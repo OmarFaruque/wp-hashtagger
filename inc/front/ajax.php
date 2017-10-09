@@ -12,6 +12,7 @@ if(!function_exists('check_tags')){
 	$prefix = $wpdb->prefix;
 	$term_rl = $prefix . 'term_relationships';
 	$reg_tble = $prefix . 'tag_registration';
+	$tag = $_POST['tag'];
 	if($wpdb->get_var("SHOW TABLES LIKE '$reg_tble'") != $reg_tble) {
 		     //table not in database. Create new table
 		     $charset_collate = $wpdb->get_charset_collate();
@@ -27,9 +28,9 @@ if(!function_exists('check_tags')){
 		     dbDelta( $sql );
 	}
 
-	$tag = get_term_by('name', $_POST['tag'], 'post_tag');
+	$tag = get_term_by('name', $tag, 'post_tag');
 	$qury = $wpdb->get_row("SELECT COUNT(*) as `post_count` FROM `".$term_rl."` WHERE `term_taxonomy_id` = ".$tag->term_taxonomy_id."", OBJECT); // total count of post related tag
-	$exReg = $wpdb->get_row("SELECT COUNT(*) as `r_tag` FROM $reg_tble WHERE `tag_name`='".$_POST['tag']."' AND `email`='".$_POST['l_mail']."'", OBJECT); //check if already registered
+	$exReg = $wpdb->get_row("SELECT COUNT(*) as `r_tag` FROM $reg_tble WHERE `tag_name`='".$tag."' AND `email`='".$_POST['l_mail']."'", OBJECT); //check if already registered
 	$tag->post_count = ($qury->post_count > 0)?$qury->post_count:$tag->count;
 	$tag->al_reg = $exReg->r_tag;
 	$tag->css_class = $linkCss;
