@@ -144,4 +144,3 @@ Yes, you can regenerate all affected objects (Post, Pages, Custom Posts) using t
 10. wp-hashtagger Settings Regenerate Section: Regenerate all existing Objects with the current settings
 11. Wp-hashtagger setting Tooltip #hash Registration: Check this section for showing tooltip for email registration on each #hastag. And user get email notification when new articale with using registered hastag. 
 
-== Changelog ==
