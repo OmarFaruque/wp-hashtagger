@@ -83,10 +83,12 @@ if(!function_exists('sabai_hashtag_process')){
 	$relationTbl = $prefix . 'term_relationships';
 	$content = $_POST['content'];
 	$postid = $_POST['id'];
-	$has = $wp_hashtagger->get_hashtags_from_content( strip_tags( $content ) );
-	$advanced_nodelete = ( get_option( 'swcc_htg_advanced_nodelete', '0' ) == 0 ) ?  false : true;
 
-	wp_set_post_tags( $postid, $has, $advanced_nodelete );
+	if(property_exists($wp_hashtagger, 'get_hashtags_from_content') && $content != ''){
+		$has = $wp_hashtagger->get_hashtags_from_content( strip_tags( $content ) );
+		$advanced_nodelete = ( get_option( 'swcc_htg_advanced_nodelete', '0' ) == 0 ) ?  false : true;
+		wp_set_post_tags( $postid, $has, $advanced_nodelete );
+	}
 
 	die();
 	}
