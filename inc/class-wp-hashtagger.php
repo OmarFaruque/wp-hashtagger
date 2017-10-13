@@ -256,7 +256,7 @@ function add_script(){
 
 
         //CSS
-        wp_register_style( 'jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css', array(), '919201701', 'screen' );
+        wp_register_style( 'jquery-ui', WHURL . '/assets/front/jquery-ui.css', array(), '919201701', 'screen' );
         wp_enqueue_style( 'jquery-ui' );   
         wp_enqueue_style( 'css-hastag', WHURL . '/assets/front/style.css', array(), '919201702', 'screen' );
         wp_enqueue_style( 'css-qtip', WHURL . '/assets/front/jquery.qtip.min.css', array(), '9201702', 'screen' );
